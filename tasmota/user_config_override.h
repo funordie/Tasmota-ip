@@ -154,8 +154,9 @@
 
 /////////////////////////  IPAEV /////////////////////////////////////////
 
-//enable DHT11
 #define USE_DHT
+#define USE_DS18x20
+#define USE_DOMOTICZ
 
 #define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
 
