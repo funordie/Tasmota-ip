@@ -89,6 +89,10 @@ bool (* const xdsp_func_ptr[])(uint8_t) = {   // Display Function Pointers
 #ifdef XDSP_16
   &Xdsp16
 #endif
+
+#ifdef XDSP_99
+  &Xdsp99
+#endif
 };
 
 const uint8_t xdsp_present = sizeof(xdsp_func_ptr) / sizeof(xdsp_func_ptr[0]);  // Number of drivers found
