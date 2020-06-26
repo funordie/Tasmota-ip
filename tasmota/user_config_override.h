@@ -158,8 +158,25 @@
 #define USE_DS18x20
 #define USE_DOMOTICZ
 
-#define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
+#define USE_SPI                                  // Hardware SPI using GPIO12(MISO), GPIO13(MOSI) and GPIO14(CLK) in addition to two user selectable GPIOs(CS and DC)
+#ifdef USE_SPI
+////  #define USE_NRF24                              // Add SPI support for NRF24L01(+) (+2k6 code)
+//  #ifdef USE_NRF24
+//    #define USE_MIBLE                            // BLE-bridge for some Mijia-BLE-sensors (+4k7 code)
+//  #else
+//    #ifndef USE_DISPLAY
+//      #define USE_DISPLAY                        // Add SPI Display support for 320x240 and 480x320 TFT
+//    #endif
+//      #define USE_DISPLAY_ILI9341                // [DisplayModel 4] Enable ILI9341 Tft 480x320 display (+19k code)
+////      #define USE_DISPLAY_EPAPER_29              // [DisplayModel 5] Enable e-paper 2.9 inch display (+19k code)
+////      #define USE_DISPLAY_EPAPER_42              // [DisplayModel 6] Enable e-paper 4.2 inch display
+////      #define USE_DISPLAY_ILI9488                // [DisplayModel 8] [I2cDriver38] (Touch)
+////      #define USE_DISPLAY_SSD1351                // [DisplayModel 9]
+////      #define USE_DISPLAY_RA8876                 // [DisplayModel 10] [I2cDriver39] (Touch)
+//  #endif  // USE_NRF24
+#endif  // USE_SPI
 
+#define USE_I2C                                  // I2C using library wire (+10k code, 0k2 mem, 124 iram)
 #ifdef USE_I2C
 //  #define USE_SHT                                // [I2cDriver8] Enable SHT1X sensor (+1k4 code)
 //  #define USE_HTU                                // [I2cDriver9] Enable HTU21/SI7013/SI7020/SI7021 sensor (I2C address 0x40) (+1k5 code)
