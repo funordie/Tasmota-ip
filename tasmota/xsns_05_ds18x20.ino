@@ -355,7 +355,7 @@ void Ds18x20Convert(void)
   OneWireWrite(W1_SKIP_ROM);           // Address all Sensors on Bus
 #endif
   OneWireWrite(W1_CONVERT_TEMP);       // start conversion, no parasite power on at the end
-//  delay(750);                          // 750ms should be enough for 12bit conv
+  delay(750);                          // 750ms should be enough for 12bit conv
 }
 
 bool Ds18x20Read(uint8_t sensor)
